@@ -28,6 +28,7 @@ class ValidationTest extends TestCase
     public function test_array_validation()
     {
         $user = User::factory()->create();
+        $user = User::find($user->id);
 
         // Post without name and email should fail
         $response = $this->actingAs($user)->post('profile');
